@@ -1,135 +1,65 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#100d24" />
-  <meta name="description" content="Dilnura uchun kichik, sehrli sovg'a." />
-  <title>Dilnura uchun ✨</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
-    :root { --pink:#ff8fc7; --lav:#b9a4ff; --white:#fff8ff; }
-    * { box-sizing:border-box; }
-    html,body { margin:0; min-height:100%; }
-    body {
-      min-height:100vh; overflow-x:hidden; color:var(--white);
-      font-family:'DM Sans',sans-serif;
-      background:
-        radial-gradient(ellipse at 50% 42%, rgba(117,76,174,.30), transparent 42%),
-        radial-gradient(ellipse at 15% 15%, rgba(255,115,183,.13), transparent 35%),
-        linear-gradient(145deg,#090817,#17102e 55%,#090817);
-      display:grid; place-items:center; padding:28px 16px;
-    }
-    #stars { position:fixed; inset:0; pointer-events:none; overflow:hidden; }
-    .star { position:absolute; width:2px; height:2px; border-radius:50%; background:#fff; opacity:.55; animation:twinkle 3s ease-in-out infinite; }
-    @keyframes twinkle { 0%,100%{opacity:.18;transform:scale(.7)} 50%{opacity:.9;transform:scale(1.5)} }
-    .wrap { width:min(100%,620px); text-align:center; position:relative; z-index:1; }
-    .eyebrow { display:inline-flex; align-items:center; gap:8px; padding:8px 14px; border:1px solid #ffffff20; border-radius:99px; background:#ffffff0b; color:#e7d9ff; font-size:12px; letter-spacing:.14em; text-transform:uppercase; }
-    .eyebrow i { width:6px;height:6px;border-radius:50%;background:#ff9acb;box-shadow:0 0 12px #ff9acb; }
-    h1 { margin:18px 0 8px; font:600 clamp(42px,10vw,68px)/1.05 'Playfair Display',serif; letter-spacing:-.035em; background:linear-gradient(100deg,#fff 15%,#ffc2e0 52%,#c9baff 90%); -webkit-background-clip:text; background-clip:text; color:transparent; text-shadow:0 10px 50px #d88bff22; }
-    .intro { margin:0 auto; max-width:440px; color:#d6cde8; line-height:1.7; font-size:15px; }
-    .scene { height:300px; display:grid; place-items:center; perspective:900px; margin:8px 0 0; position:relative; }
-    .glow { position:absolute; width:230px;height:90px;bottom:45px;border-radius:50%;background:#d65ca8;filter:blur(55px);opacity:.22; }
-    .gift { width:156px;height:150px;position:relative;transform-style:preserve-3d; transform:rotateX(-8deg) rotateY(-23deg); transition:transform 1s cubic-bezier(.2,.8,.2,1); filter:drop-shadow(0 25px 25px #0008); }
-    .gift:hover { transform:rotateX(-5deg) rotateY(-12deg) translateY(-5px); }
-    .box-base { position:absolute; width:150px;height:105px;bottom:0;left:3px; transform-style:preserve-3d; }
-    .front { position:absolute; inset:0; background:linear-gradient(135deg,#c94c9d,#873f9e); border:1px solid #ffc5e955; }
-    .front:before { content:"";position:absolute;left:62px;top:0;width:25px;height:100%;background:linear-gradient(90deg,#ffd5ed,#ff9acb,#f8c4e5);box-shadow:0 0 18px #ffb5df66; }
-    .side { position:absolute; width:45px;height:105px;right:-45px;top:0;transform:skewY(-35deg);transform-origin:left;background:linear-gradient(90deg,#78347f,#50285f); }
-    .top { position:absolute; width:150px;height:45px;left:0;top:-45px;transform:skewX(-45deg) translateX(22px);transform-origin:bottom;background:linear-gradient(135deg,#f18ac2,#b64caa); }
-    .lid { position:absolute; width:170px;height:35px;left:-7px;top:-52px;transform:translateZ(5px);transform-style:preserve-3d;transition:transform 1s cubic-bezier(.2,.8,.2,1); }
-    .lid-top { position:absolute;inset:0;background:linear-gradient(110deg,#ffb2d9,#d76bb8 70%,#a64b9f);border:1px solid #ffe0f377; }
-    .lid-top:after { content:"";position:absolute;left:73px;top:0;width:24px;height:100%;background:linear-gradient(90deg,#fff0f8,#ffb5dc,#ffe7f5); }
-    .bow { position:absolute;top:-28px;left:67px;width:36px;height:24px; }
-    .bow:before,.bow:after { content:"";position:absolute;width:22px;height:19px;border:7px solid #ffe0f1;border-radius:70% 70% 15% 70%;box-shadow:0 0 10px #ffb5dc88; }
-    .bow:before { left:-7px;transform:rotate(25deg); }
-    .bow:after { right:-7px;transform:scaleX(-1) rotate(25deg); }
-    .gift.open { transform:rotateX(-5deg) rotateY(-15deg) translateY(7px); }
-    .gift.open .lid { transform:translate3d(-12px,-75px,35px) rotateX(-28deg) rotateZ(-12deg); }
-    .gift.open .bow { opacity:.3; }
-    .tap-hint { position:absolute;bottom:12px;color:#bcb0d2;font-size:12px;letter-spacing:.04em;animation:pulse 1.8s infinite; }
-    @keyframes pulse { 50%{opacity:.45} }
-    .open-btn { border:1px solid #ffffff30; color:#fff; background:linear-gradient(110deg,#d65ca8,#8b65d8); padding:14px 25px; border-radius:999px; font:600 14px 'DM Sans'; cursor:pointer; box-shadow:0 10px 35px #a64caa55,inset 0 1px #ffffff55; transition:.25s; }
-    .open-btn:hover { transform:translateY(-2px);box-shadow:0 14px 40px #a64caa77; }
-    .message { max-height:0;opacity:0;overflow:hidden;transform:translateY(12px);transition:all .8s ease; }
-    .message.show { max-height:330px;opacity:1;transform:translateY(0);margin-top:16px; }
-    .note { margin:0 auto;max-width:470px;padding:22px 24px;border:1px solid #ffffff24;border-radius:22px;background:linear-gradient(135deg,#ffffff12,#ffffff06);box-shadow:0 20px 60px #0003;backdrop-filter:blur(12px); }
-    .note .small-heart { font-size:23px; filter:drop-shadow(0 0 12px #ff8fc7); }
-    .note p { margin:10px 0 0;color:#eee5f8;line-height:1.8;font-size:15px; }
-    .signature { margin-top:13px;color:#ffb7dc;font:600 18px 'Playfair Display',serif; }
-    .footer { margin-top:28px;color:#8e83a7;font-size:11px;letter-spacing:.08em; }
-    .particle { position:fixed;z-index:5;pointer-events:none;animation:fly 2.8s ease-out forwards; }
-    @keyframes fly { 0%{transform:translate(0,0) scale(.5) rotate(0);opacity:0} 15%{opacity:1} 100%{transform:translate(var(--x),var(--y)) scale(1.25) rotate(var(--r));opacity:0} }
-    @media(max-width:420px){.scene{height:270px}.intro{font-size:14px}.note{padding:19px 17px}.note p{font-size:14px}}
-    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
-  </style>
-</head>
-<body>
-  <div id="stars" aria-hidden="true"></div>
-  <main class="wrap">
-    <div class="eyebrow"><i></i> kichik bir syurpriz</div>
-    <h1>Dilnura</h1>
-    <p class="intro">Bugun senga kayfiyatingni ko‘taradigan kichkina, ammo samimiy sovg‘a tayyorladim.</p>
-    <section class="scene" aria-label="Sehrli sovg‘a qutisi">
-      <div class="glow"></div>
-      <div class="gift" id="gift">
-        <div class="box-base"><div class="front"></div><div class="side"></div><div class="top"></div></div>
-        <div class="lid"><div class="lid-top"></div><div class="bow"></div></div>
-      </div>
-      <div class="tap-hint" id="hint">Sovg‘a qutisini ochish uchun tugmani bos ✨</div>
-    </section>
-    <button class="open-btn" id="openBtn">Sovg‘ani ochish 💝</button>
-    <section class="message" id="message" aria-live="polite">
-      <div class="note">
-        <div class="small-heart">♡</div>
-        <p>Dilnura, har bir kuning chiroyli lahzalar, yoqimli tabassumlar va kutilmagan quvonchlarga boy bo‘lsin. Doimo o‘zingga yarashgan tabassumingni yo‘qotma. Bugun ham, ertaga ham kayfiyating a’lo bo‘lishiga tilakdoshman! 🌷</p>
-        <div class="signature">Senga ezgu tilaklar bilan ✨</div>
-      </div>
-    </section>
-    <div class="footer">BU KICHKINA SOVG‘A FAQAT SEN UCHUN</div>
-  </main>
-  <script>
-    const stars = document.getElementById('stars');
-    for (let i = 0; i < 85; i++) {
-      const s = document.createElement('span');
-      s.className = 'star';
-      s.style.left = Math.random() * 100 + '%';
-      s.style.top = Math.random() * 100 + '%';
-      s.style.animationDelay = (Math.random() * 4) + 's';
-      s.style.animationDuration = (2 + Math.random() * 3) + 's';
-      stars.appendChild(s);
-    }
-    const gift = document.getElementById('gift');
-    const btn = document.getElementById('openBtn');
-    const message = document.getElementById('message');
-    const hint = document.getElementById('hint');
-    let opened = false;
-    function burst() {
-      const symbols = ['♡', '♥', '✦', '✨', '🌸'];
-      for (let i = 0; i < 34; i++) {
-        const p = document.createElement('span');
-        p.className = 'particle';
-        p.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-        p.style.left = (window.innerWidth / 2 + (Math.random() - .5) * 100) + 'px';
-        p.style.top = (window.innerHeight * .48 + (Math.random() - .5) * 50) + 'px';
-        p.style.color = ['#ff9bcf', '#d6baff', '#fff0fa', '#ffc66e'][i % 4];
-        p.style.fontSize = (14 + Math.random() * 20) + 'px';
-        p.style.setProperty('--x', ((Math.random() - .5) * 500) + 'px');
-        p.style.setProperty('--y', (-100 - Math.random() * 330) + 'px');
-        p.style.setProperty('--r', ((Math.random() - .5) * 180) + 'deg');
-        document.body.appendChild(p);
-        setTimeout(() => p.remove(), 3000);
-      }
-    }
-    btn.addEventListener('click', () => {
-      if (opened) { message.classList.toggle('show'); return; }
-      opened = true;
-      gift.classList.add('open');
-      message.classList.add('show');
-      btn.textContent = 'Yana bir bor o‘qish ♡';
-      hint.textContent = 'Senga faqat yaxshiliklar tilayman!';
-      burst();
-    });
-  </script>
-</body>
-</html>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#160d25"><meta name="description" content="Dilnura uchun kichkina sehrli syurpriz.">
+<title>Dilnura, bu sen uchun ♡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#fff8f2;--pink:#ff9dc5;--rose:#ed6d9d;--lilac:#cbb5ff;--ink:#28172e}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:var(--cream);font-family:'DM Sans',sans-serif;background:#140d21;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(ellipse at 18% 15%,#693b7255,transparent 40%),radial-gradient(ellipse at 85% 70%,#a0446a33,transparent 38%),linear-gradient(145deg,#100b1b,#24142e 52%,#130c20)}
+#sky{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}.star{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;animation:blink 3s infinite ease-in-out}@keyframes blink{50%{opacity:.15;transform:scale(.5)}}
+main{width:min(100%,760px);margin:auto;padding:28px 18px 55px;text-align:center}.topline{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:#e7c9e7;margin:14px 0 18px}.topline span{color:#ff9dc5}
+h1{font:600 clamp(48px,12vw,86px)/.98 'Playfair Display',serif;letter-spacing:-.045em;margin:0;background:linear-gradient(100deg,#fff7f0,#ffb6d3 50%,#d5c4ff);color:transparent;background-clip:text;-webkit-background-clip:text;filter:drop-shadow(0 8px 25px #e78ebc30)}
+.subtitle{font-size:15px;line-height:1.8;color:#e5d5e7;max-width:470px;margin:18px auto 0}
+.scene{height:340px;display:grid;place-items:center;perspective:1000px;position:relative;margin:5px auto 0}.halo{position:absolute;width:250px;height:110px;border-radius:50%;background:#ff8cba;filter:blur(65px);opacity:.26;top:130px}
+.gift{width:170px;height:150px;position:relative;transform-style:preserve-3d;transform:rotateX(-8deg) rotateY(-25deg);filter:drop-shadow(0 28px 25px #0008);transition:transform 1.1s cubic-bezier(.2,.8,.2,1)}
+.base{position:absolute;bottom:0;left:10px;width:150px;height:105px;background:linear-gradient(135deg,#ed78a8,#a64789);border:1px solid #ffc7df88;box-shadow:inset -16px 0 25px #63275b44}
+.base:before{content:"";position:absolute;left:61px;top:0;height:100%;width:27px;background:linear-gradient(90deg,#ffe2ee,#ffb5d1,#ffe9f1)}
+.base:after{content:"";position:absolute;right:-34px;top:13px;width:34px;height:105px;transform:skewY(-35deg);transform-origin:left;background:linear-gradient(90deg,#87366f,#54274f)}
+.lid{position:absolute;z-index:2;left:0;top:2px;width:170px;height:36px;background:linear-gradient(110deg,#ffc0d8,#df6fa8 72%,#a64c90);border:1px solid #ffe3ee;transform:translateZ(5px);transition:transform 1.15s cubic-bezier(.2,.8,.2,1);box-shadow:0 5px 12px #0003}
+.lid:after{content:"";position:absolute;left:72px;width:25px;height:100%;background:linear-gradient(90deg,#fff0f6,#ffb3d0,#fff0f6)}
+.bow{position:absolute;top:-25px;left:66px;width:38px;height:26px}.bow:before,.bow:after{content:"";position:absolute;width:23px;height:19px;border:7px solid #ffe7f0;border-radius:80% 80% 15% 80%;filter:drop-shadow(0 0 8px #ffb5d5)}.bow:before{left:-6px;transform:rotate(25deg)}.bow:after{right:-6px;transform:scaleX(-1) rotate(25deg)}
+.gift.open{transform:rotateX(-3deg) rotateY(-13deg) translateY(14px)}.gift.open .lid{transform:translate3d(-16px,-95px,45px) rotateX(-28deg) rotateZ(-13deg)}
+.hint{position:absolute;bottom:14px;font-size:12px;color:#d5c2dc;letter-spacing:.06em;animation:softpulse 2s infinite}@keyframes softpulse{50%{opacity:.45}}
+.action{border:1px solid #ffffff55;border-radius:99px;padding:15px 27px;background:linear-gradient(110deg,#f17eaa,#a77ae9);color:white;font:700 14px 'DM Sans';box-shadow:0 12px 35px #d65c9d55,inset 0 1px #fff8;cursor:pointer;transition:.25s}.action:active{transform:scale(.97)}.action:hover{transform:translateY(-3px);box-shadow:0 17px 42px #d65c9d77}
+.reveal{display:none;animation:appear 1s ease both}.reveal.show{display:block}@keyframes appear{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.divider{display:flex;align-items:center;gap:14px;justify-content:center;color:#f4a9c8;margin:40px auto 17px;font-size:12px;letter-spacing:.17em;text-transform:uppercase}.divider:before,.divider:after{content:"";height:1px;width:52px;background:linear-gradient(90deg,transparent,#eaa6c8)}
+.message{max-width:570px;margin:0 auto;padding:27px 23px;border:1px solid #ffffff27;border-radius:27px;background:linear-gradient(145deg,#ffffff18,#ffffff08);backdrop-filter:blur(15px);box-shadow:0 22px 65px #0004}
+.message .emoji{font-size:29px}.message h2{font:600 clamp(27px,7vw,38px) 'Playfair Display',serif;margin:9px 0 12px;color:#ffd5e6}.message p{font-size:15px;line-height:1.95;color:#f0e4ef;margin:0}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:570px;margin:18px auto}.photo{height:205px;border-radius:22px;overflow:hidden;position:relative;border:1px solid #ffffff2b;box-shadow:0 14px 35px #0004}.photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s}.photo:hover img{transform:scale(1.08)}.photo span{position:absolute;inset:auto 0 0;padding:28px 10px 13px;background:linear-gradient(transparent,#160d21bb);font:500 16px 'Playfair Display',serif;color:white}
+.wish{max-width:570px;margin:20px auto 0;color:#f4ddeb;font:500 21px/1.55 'Playfair Display',serif}.signature{margin-top:13px;color:#ffb1d0;font-size:13px;letter-spacing:.07em}
+.footer{margin-top:44px;color:#9c87a8;font-size:10px;letter-spacing:.2em}.heart{position:fixed;z-index:8;pointer-events:none;animation:float 3.2s ease-out forwards}@keyframes float{0%{opacity:0;transform:translate(0,0) scale(.4) rotate(0)}12%{opacity:1}100%{opacity:0;transform:translate(var(--x),var(--y)) scale(1.4) rotate(var(--r))}}
+.confetti{position:fixed;z-index:7;pointer-events:none;animation:fall 4s ease-in forwards}@keyframes fall{to{transform:translateY(110vh) rotate(700deg);opacity:0}}
+@media(max-width:430px){main{padding-left:15px;padding-right:15px}.scene{height:300px}.photo{height:170px}.message{padding:23px 18px}.message p{font-size:14px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style></head>
+<body><div id="sky"></div>
+<main>
+<div class="topline">✦ <span>faqat sen uchun</span> ✦</div>
+<h1>Dilnura</h1>
+<p class="subtitle">Senga kichkina bir sir tayyorladim…<br>Uni ochishga jur’at qilasanmi? ♡</p>
+<section class="scene"><div class="halo"></div><div class="gift" id="gift"><div class="base"></div><div class="lid"><div class="bow"></div></div></div><div class="hint" id="hint">Sehrli qutini ochish vaqti keldi ✨</div></section>
+<button class="action" id="open">Syurprizni ochish ♡</button>
+<section class="reveal" id="reveal">
+<div class="divider">senga atalgan tilak</div>
+<div class="message"><div class="emoji">🌷✨🦋</div><h2>Bir tabassuming — butun bir go‘zallik</h2><p>Dilnura, bilasanmi, dunyoda oddiy kunni ham chiroyli qiladigan narsalar bor: tonggi quyosh, sevimli qo‘shiq, kutilmagan yaxshi xabar… va samimiy tabassum. Senga shunday quvonchli lahzalar har kuni hamroh bo‘lishini tilayman. Ko‘ngling doim bahordek ochiq, orzularing esa osmondek cheksiz bo‘lsin. ♡</p></div>
+<div class="divider">bir oz go‘zallik</div>
+<div class="gallery">
+<div class="photo"><img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=700&q=85" alt="Rang-barang bahor gullari" loading="lazy"><span>Har kuning guldek ochilsin</span></div>
+<div class="photo"><img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=700&q=85" alt="Nozik pushti atirgul" loading="lazy"><span>Go‘zallik hamisha yoningda</span></div>
+</div>
+<div class="wish">“Baxt — ba’zan kutilmagan kichik syurprizlarda yashirinadi.”</div>
+<div class="signature">Senga eng chiroyli tilaklar bilan ♡</div>
+</section>
+<div class="footer">BUGUNING GO‘ZAL O‘TSIN · ♡ ·</div>
+</main>
+<script>
+const sky=document.getElementById('sky');for(let i=0;i<105;i++){let s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.opacity=.2+Math.random()*.7;s.style.animationDelay=Math.random()*4+'s';s.style.animationDuration=2+Math.random()*4+'s';sky.appendChild(s)}
+const gift=document.getElementById('gift'),btn=document.getElementById('open'),reveal=document.getElementById('reveal'),hint=document.getElementById('hint');let opened=false;
+function shower(){const symbols=['♡','♥','✦','✨','🌸','🦋','🌷'];for(let i=0;i<65;i++){let p=document.createElement('span');p.className='heart';p.textContent=symbols[Math.floor(Math.random()*symbols.length)];p.style.left=(innerWidth/2+(Math.random()-.5)*120)+'px';p.style.top=(innerHeight*.42+(Math.random()-.5)*70)+'px';p.style.fontSize=14+Math.random()*23+'px';p.style.color=['#ffb4d3','#e0c4ff','#fff0b9','#fff'][i%4];p.style.setProperty('--x',(Math.random()-.5)*innerWidth*.95+'px');p.style.setProperty('--y',(-120-Math.random()*innerHeight*.65)+'px');p.style.setProperty('--r',(Math.random()-.5)*220+'deg');document.body.appendChild(p);setTimeout(()=>p.remove(),3400)}
+for(let i=0;i<35;i++){let c=document.createElement('b');c.className='confetti';c.textContent=['✦','✧','❀'][i%3];c.style.left=Math.random()*100+'%';c.style.top='-20px';c.style.color=['#ffb3d1','#cbb5ff','#ffe4a9'][i%3];c.style.fontSize=12+Math.random()*17+'px';c.style.animationDelay=Math.random()*.8+'s';document.body.appendChild(c);setTimeout(()=>c.remove(),5000)}}
+btn.addEventListener('click',()=>{if(!opened){opened=true;gift.classList.add('open');reveal.classList.add('show');hint.textContent='Mana, bu kichkina quvonch sen uchun! ♡';btn.textContent='Yana bir bor tomosha qilish ✨';shower();setTimeout(()=>reveal.scrollIntoView({behavior:'smooth',block:'start'}),650)}else{shower();reveal.classList.remove('show');void reveal.offsetWidth;reveal.classList.add('show')}});
+</script></body></html>
