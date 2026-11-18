@@ -1,65 +1,144 @@
-<!DOCTYPE html>
-<html lang="uz">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#160d25"><meta name="description" content="Dilnura uchun kichkina sehrli syurpriz.">
-<title>Dilnura, bu sen uchun ♡</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#100817">
+<meta name="description" content="A little enchanted world made just for Dilnura.">
+<title>Dilnura — My Princess ♡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--cream:#fff8f2;--pink:#ff9dc5;--rose:#ed6d9d;--lilac:#cbb5ff;--ink:#28172e}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:var(--cream);font-family:'DM Sans',sans-serif;background:#140d21;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(ellipse at 18% 15%,#693b7255,transparent 40%),radial-gradient(ellipse at 85% 70%,#a0446a33,transparent 38%),linear-gradient(145deg,#100b1b,#24142e 52%,#130c20)}
-#sky{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}.star{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;animation:blink 3s infinite ease-in-out}@keyframes blink{50%{opacity:.15;transform:scale(.5)}}
-main{width:min(100%,760px);margin:auto;padding:28px 18px 55px;text-align:center}.topline{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:#e7c9e7;margin:14px 0 18px}.topline span{color:#ff9dc5}
-h1{font:600 clamp(48px,12vw,86px)/.98 'Playfair Display',serif;letter-spacing:-.045em;margin:0;background:linear-gradient(100deg,#fff7f0,#ffb6d3 50%,#d5c4ff);color:transparent;background-clip:text;-webkit-background-clip:text;filter:drop-shadow(0 8px 25px #e78ebc30)}
-.subtitle{font-size:15px;line-height:1.8;color:#e5d5e7;max-width:470px;margin:18px auto 0}
-.scene{height:340px;display:grid;place-items:center;perspective:1000px;position:relative;margin:5px auto 0}.halo{position:absolute;width:250px;height:110px;border-radius:50%;background:#ff8cba;filter:blur(65px);opacity:.26;top:130px}
-.gift{width:170px;height:150px;position:relative;transform-style:preserve-3d;transform:rotateX(-8deg) rotateY(-25deg);filter:drop-shadow(0 28px 25px #0008);transition:transform 1.1s cubic-bezier(.2,.8,.2,1)}
-.base{position:absolute;bottom:0;left:10px;width:150px;height:105px;background:linear-gradient(135deg,#ed78a8,#a64789);border:1px solid #ffc7df88;box-shadow:inset -16px 0 25px #63275b44}
-.base:before{content:"";position:absolute;left:61px;top:0;height:100%;width:27px;background:linear-gradient(90deg,#ffe2ee,#ffb5d1,#ffe9f1)}
-.base:after{content:"";position:absolute;right:-34px;top:13px;width:34px;height:105px;transform:skewY(-35deg);transform-origin:left;background:linear-gradient(90deg,#87366f,#54274f)}
-.lid{position:absolute;z-index:2;left:0;top:2px;width:170px;height:36px;background:linear-gradient(110deg,#ffc0d8,#df6fa8 72%,#a64c90);border:1px solid #ffe3ee;transform:translateZ(5px);transition:transform 1.15s cubic-bezier(.2,.8,.2,1);box-shadow:0 5px 12px #0003}
-.lid:after{content:"";position:absolute;left:72px;width:25px;height:100%;background:linear-gradient(90deg,#fff0f6,#ffb3d0,#fff0f6)}
-.bow{position:absolute;top:-25px;left:66px;width:38px;height:26px}.bow:before,.bow:after{content:"";position:absolute;width:23px;height:19px;border:7px solid #ffe7f0;border-radius:80% 80% 15% 80%;filter:drop-shadow(0 0 8px #ffb5d5)}.bow:before{left:-6px;transform:rotate(25deg)}.bow:after{right:-6px;transform:scaleX(-1) rotate(25deg)}
-.gift.open{transform:rotateX(-3deg) rotateY(-13deg) translateY(14px)}.gift.open .lid{transform:translate3d(-16px,-95px,45px) rotateX(-28deg) rotateZ(-13deg)}
-.hint{position:absolute;bottom:14px;font-size:12px;color:#d5c2dc;letter-spacing:.06em;animation:softpulse 2s infinite}@keyframes softpulse{50%{opacity:.45}}
-.action{border:1px solid #ffffff55;border-radius:99px;padding:15px 27px;background:linear-gradient(110deg,#f17eaa,#a77ae9);color:white;font:700 14px 'DM Sans';box-shadow:0 12px 35px #d65c9d55,inset 0 1px #fff8;cursor:pointer;transition:.25s}.action:active{transform:scale(.97)}.action:hover{transform:translateY(-3px);box-shadow:0 17px 42px #d65c9d77}
-.reveal{display:none;animation:appear 1s ease both}.reveal.show{display:block}@keyframes appear{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
-.divider{display:flex;align-items:center;gap:14px;justify-content:center;color:#f4a9c8;margin:40px auto 17px;font-size:12px;letter-spacing:.17em;text-transform:uppercase}.divider:before,.divider:after{content:"";height:1px;width:52px;background:linear-gradient(90deg,transparent,#eaa6c8)}
-.message{max-width:570px;margin:0 auto;padding:27px 23px;border:1px solid #ffffff27;border-radius:27px;background:linear-gradient(145deg,#ffffff18,#ffffff08);backdrop-filter:blur(15px);box-shadow:0 22px 65px #0004}
-.message .emoji{font-size:29px}.message h2{font:600 clamp(27px,7vw,38px) 'Playfair Display',serif;margin:9px 0 12px;color:#ffd5e6}.message p{font-size:15px;line-height:1.95;color:#f0e4ef;margin:0}
-.gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:570px;margin:18px auto}.photo{height:205px;border-radius:22px;overflow:hidden;position:relative;border:1px solid #ffffff2b;box-shadow:0 14px 35px #0004}.photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s}.photo:hover img{transform:scale(1.08)}.photo span{position:absolute;inset:auto 0 0;padding:28px 10px 13px;background:linear-gradient(transparent,#160d21bb);font:500 16px 'Playfair Display',serif;color:white}
-.wish{max-width:570px;margin:20px auto 0;color:#f4ddeb;font:500 21px/1.55 'Playfair Display',serif}.signature{margin-top:13px;color:#ffb1d0;font-size:13px;letter-spacing:.07em}
-.footer{margin-top:44px;color:#9c87a8;font-size:10px;letter-spacing:.2em}.heart{position:fixed;z-index:8;pointer-events:none;animation:float 3.2s ease-out forwards}@keyframes float{0%{opacity:0;transform:translate(0,0) scale(.4) rotate(0)}12%{opacity:1}100%{opacity:0;transform:translate(var(--x),var(--y)) scale(1.4) rotate(var(--r))}}
-.confetti{position:fixed;z-index:7;pointer-events:none;animation:fall 4s ease-in forwards}@keyframes fall{to{transform:translateY(110vh) rotate(700deg);opacity:0}}
-@media(max-width:430px){main{padding-left:15px;padding-right:15px}.scene{height:300px}.photo{height:170px}.message{padding:23px 18px}.message p{font-size:14px}}
+:root{color-scheme:dark;--ivory:#fff5ef;--rose:#ff9dbd;--gold:#f4d49b;--muted:#d9c6d6}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#100817;color:var(--ivory);font-family:Manrope,system-ui,sans-serif}
+body{overflow:hidden}
+#universe{position:fixed;inset:0;width:100%;height:100%;display:block}
+.vignette{position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 46%,transparent 20%,#10081735 65%,#09050d 115%),linear-gradient(180deg,#10081722,#10081755)}
+.grain{position:fixed;inset:0;pointer-events:none;opacity:.08;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E")}
+main{position:relative;z-index:2;min-height:100svh;display:grid;place-items:center;padding:24px}
+.story{width:min(680px,100%);text-align:center;transform:translateY(2vh);transition:opacity .7s,transform .7s}
+.eyebrow{font-size:10px;letter-spacing:.38em;text-transform:uppercase;color:#f2c8d8;margin:0 0 18px}
+h1,h2,.script{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500}
+h1{font-size:clamp(4.5rem,15vw,9.5rem);line-height:.78;letter-spacing:-.055em;margin:0;color:#fff1f0;text-shadow:0 0 50px #ff9dbd55}
+h1 span{display:block;font-size:.32em;letter-spacing:.3em;text-transform:uppercase;color:var(--rose);margin-top:25px}
+h2{font-size:clamp(2.5rem,8vw,5rem);line-height:.95;margin:0 0 16px;color:#fff0e9}
+.copy{max-width:480px;margin:0 auto;color:var(--muted);font-size:clamp(13px,2.6vw,16px);line-height:1.9}
+.panel{margin:25px auto 0;padding:clamp(22px,5vw,34px);width:min(540px,100%);border:1px solid #fff2;border-radius:26px;background:linear-gradient(145deg,#fff1 0%,#fff0 100%);box-shadow:0 25px 90px #0006,inset 0 1px #fff2;backdrop-filter:blur(13px)}
+.quote{font:500 clamp(1.45rem,5vw,2.15rem)/1.25 "Cormorant Garamond",Georgia,serif;color:#ffe4eb}
+.signature{margin-top:18px;color:var(--rose);font-size:11px;letter-spacing:.24em;text-transform:uppercase}
+.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:27px}
+button{font:700 11px Manrope,sans-serif;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;border:0}
+.primary{padding:16px 25px;border-radius:99px;color:#29111f;background:linear-gradient(110deg,#ffe1e9,#e99ab7 55%,#e8c58f);box-shadow:0 8px 35px #ed9dbb44;transition:transform .25s,box-shadow .25s}
+.primary:hover{transform:translateY(-3px);box-shadow:0 14px 45px #ed9dbb66}
+.ghost{padding:15px 20px;border-radius:99px;color:#f8dce7;background:#fff0;border:1px solid #fff4}
+.progress{position:fixed;z-index:5;left:50%;bottom:max(22px,env(safe-area-inset-bottom));transform:translateX(-50%);display:flex;gap:8px;align-items:center}
+.dot{width:5px;height:5px;border-radius:9px;background:#fff5;transition:all .4s}.dot.active{width:24px;background:var(--rose)}
+.sound{position:fixed;z-index:5;right:20px;top:20px;border:1px solid #fff3;background:#fff1;color:#f9dce7;border-radius:50%;width:42px;height:42px}
+.sound span{font-size:16px}
+.scene{display:none;animation:arrive 1s cubic-bezier(.2,.75,.2,1) both}.scene.active{display:block}
+@keyframes arrive{from{opacity:0;transform:translateY(22px) scale(.98);filter:blur(5px)}to{opacity:1;transform:none;filter:blur(0)}}
+.letter{font-size:15px;line-height:2;color:#f1dfe8;text-align:left}
+.letter strong{color:#ffd0df;font-weight:600}
+.small-note{font-size:10px;color:#a990a8;letter-spacing:.12em;margin-top:18px}
+#fallback{display:none;position:fixed;inset:0;place-items:center;font-size:100px;color:#ff9dbd;pointer-events:none}
+@media(max-width:520px){main{padding:20px}.story{transform:translateY(-1vh)}.panel{border-radius:21px}.sound{top:14px;right:14px}.eyebrow{font-size:9px}.copy{max-width:340px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
-</style></head>
-<body><div id="sky"></div>
+</style>
+</head>
+<body>
+<canvas id="universe" aria-hidden="true"></canvas><div id="fallback">♡</div><div class="vignette"></div><div class="grain"></div>
+<button class="sound" id="sound" aria-label="Toggle ambient sound" title="Ambient sound"><span>♫</span></button>
 <main>
-<div class="topline">✦ <span>faqat sen uchun</span> ✦</div>
-<h1>Dilnura</h1>
-<p class="subtitle">Senga kichkina bir sir tayyorladim…<br>Uni ochishga jur’at qilasanmi? ♡</p>
-<section class="scene"><div class="halo"></div><div class="gift" id="gift"><div class="base"></div><div class="lid"><div class="bow"></div></div></div><div class="hint" id="hint">Sehrli qutini ochish vaqti keldi ✨</div></section>
-<button class="action" id="open">Syurprizni ochish ♡</button>
-<section class="reveal" id="reveal">
-<div class="divider">senga atalgan tilak</div>
-<div class="message"><div class="emoji">🌷✨🦋</div><h2>Bir tabassuming — butun bir go‘zallik</h2><p>Dilnura, bilasanmi, dunyoda oddiy kunni ham chiroyli qiladigan narsalar bor: tonggi quyosh, sevimli qo‘shiq, kutilmagan yaxshi xabar… va samimiy tabassum. Senga shunday quvonchli lahzalar har kuni hamroh bo‘lishini tilayman. Ko‘ngling doim bahordek ochiq, orzularing esa osmondek cheksiz bo‘lsin. ♡</p></div>
-<div class="divider">bir oz go‘zallik</div>
-<div class="gallery">
-<div class="photo"><img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=700&q=85" alt="Rang-barang bahor gullari" loading="lazy"><span>Har kuning guldek ochilsin</span></div>
-<div class="photo"><img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=700&q=85" alt="Nozik pushti atirgul" loading="lazy"><span>Go‘zallik hamisha yoningda</span></div>
-</div>
-<div class="wish">“Baxt — ba’zan kutilmagan kichik syurprizlarda yashirinadi.”</div>
-<div class="signature">Senga eng chiroyli tilaklar bilan ♡</div>
+<div class="story">
+<section class="scene active" data-scene="0">
+<p class="eyebrow">a little world, made for you</p>
+<h1>Dilnura<span>my princess</span></h1>
+<p class="copy" style="margin-top:25px">Some stories begin with a hello.<br>Ours deserves its own little universe.</p>
+<div class="actions"><button class="primary next">Enter my world&nbsp; ✧</button></div>
 </section>
-<div class="footer">BUGUNING GO‘ZAL O‘TSIN · ♡ ·</div>
+<section class="scene" data-scene="1">
+<p class="eyebrow">chapter one · the secret garden</p>
+<h2>A garden just for you</h2>
+<p class="copy">If every flower could carry a wish, this garden would be blooming with them. Take a little moment here — it was made for you.</p>
+<div class="actions"><button class="primary next">Follow the light&nbsp; →</button></div>
+</section>
+<section class="scene" data-scene="2">
+<p class="eyebrow">chapter two · a little constellation</p>
+<h2>Your name, among the stars</h2>
+<p class="copy">Out of all the lights in this endless sky, some names simply shine a little differently.</p>
+<div class="panel"><div class="quote" style="font-size:clamp(2.6rem,10vw,5rem);color:#ffe3e8">D I L N U R A</div><div class="signature">one of a kind · always</div></div>
+<div class="actions"><button class="primary next">There is one more thing&nbsp; ♡</button></div>
+</section>
+<section class="scene" data-scene="3">
+<p class="eyebrow">chapter three · from the heart</p>
+<h2>A little note for you</h2>
+<div class="panel">
+<div class="quote">Dear Dilnura,</div>
+<p class="letter">I wanted to create something a little different for you — not just a gift, but a tiny world you could step into.<br><br>I hope life gives you a thousand reasons to smile, days that feel like sunshine, and dreams that find their way to you.<br><br><strong>You are special. Never forget that.</strong></p>
+<div class="signature">with warmth, just for you ♡</div>
+</div>
+<div class="actions"><button class="primary next">One last surprise&nbsp; ✨</button></div>
+</section>
+<section class="scene" data-scene="4">
+<p class="eyebrow">and the story keeps glowing</p>
+<h2>My Princess</h2>
+<p class="copy">The world is big, and this is only a tiny corner of it. But every detail here was placed with one person in mind.</p>
+<div class="panel"><div class="quote">Dilnura, you make this story beautiful. ♡</div><div class="signature">made with love · for my princess</div></div>
+<div class="actions"><button class="primary" id="again">Live it again&nbsp; ↻</button></div>
+<p class="small-note">THE END? &nbsp; · &nbsp; ONLY THE BEGINNING</p>
+</section>
+</div>
 </main>
-<script>
-const sky=document.getElementById('sky');for(let i=0;i<105;i++){let s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.opacity=.2+Math.random()*.7;s.style.animationDelay=Math.random()*4+'s';s.style.animationDuration=2+Math.random()*4+'s';sky.appendChild(s)}
-const gift=document.getElementById('gift'),btn=document.getElementById('open'),reveal=document.getElementById('reveal'),hint=document.getElementById('hint');let opened=false;
-function shower(){const symbols=['♡','♥','✦','✨','🌸','🦋','🌷'];for(let i=0;i<65;i++){let p=document.createElement('span');p.className='heart';p.textContent=symbols[Math.floor(Math.random()*symbols.length)];p.style.left=(innerWidth/2+(Math.random()-.5)*120)+'px';p.style.top=(innerHeight*.42+(Math.random()-.5)*70)+'px';p.style.fontSize=14+Math.random()*23+'px';p.style.color=['#ffb4d3','#e0c4ff','#fff0b9','#fff'][i%4];p.style.setProperty('--x',(Math.random()-.5)*innerWidth*.95+'px');p.style.setProperty('--y',(-120-Math.random()*innerHeight*.65)+'px');p.style.setProperty('--r',(Math.random()-.5)*220+'deg');document.body.appendChild(p);setTimeout(()=>p.remove(),3400)}
-for(let i=0;i<35;i++){let c=document.createElement('b');c.className='confetti';c.textContent=['✦','✧','❀'][i%3];c.style.left=Math.random()*100+'%';c.style.top='-20px';c.style.color=['#ffb3d1','#cbb5ff','#ffe4a9'][i%3];c.style.fontSize=12+Math.random()*17+'px';c.style.animationDelay=Math.random()*.8+'s';document.body.appendChild(c);setTimeout(()=>c.remove(),5000)}}
-btn.addEventListener('click',()=>{if(!opened){opened=true;gift.classList.add('open');reveal.classList.add('show');hint.textContent='Mana, bu kichkina quvonch sen uchun! ♡';btn.textContent='Yana bir bor tomosha qilish ✨';shower();setTimeout(()=>reveal.scrollIntoView({behavior:'smooth',block:'start'}),650)}else{shower();reveal.classList.remove('show');void reveal.offsetWidth;reveal.classList.add('show')}});
-</script></body></html>
+<div class="progress" id="progress" aria-label="Story progress"><i class="dot active"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
+<script type="module">
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
+const canvas=document.querySelector('#universe'),fallback=document.querySelector('#fallback');
+let renderer,scene,camera,clock,heart,roseGroup,stars,petals=[],floaters=[],targetZ=0,ambient=null,audioCtx=null;
+try{
+ renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true,powerPreference:'low-power'});
+ renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));renderer.setSize(innerWidth,innerHeight);renderer.outputColorSpace=THREE.SRGBColorSpace;
+ scene=new THREE.Scene();camera=new THREE.PerspectiveCamera(48,innerWidth/innerHeight,.1,100);camera.position.set(0,0,13);clock=new THREE.Clock();
+ scene.add(new THREE.AmbientLight(0xffc9df,1.15));
+ const key=new THREE.PointLight(0xff8db7,34,30);key.position.set(3,4,6);scene.add(key);
+ const gold=new THREE.PointLight(0xf6d5a1,22,24);gold.position.set(-4,-2,4);scene.add(gold);
+ // Deep star field
+ const starGeo=new THREE.BufferGeometry(),count=1500,positions=new Float32Array(count*3);
+ for(let i=0;i<count;i++){positions[i*3]=(Math.random()-.5)*34;positions[i*3+1]=(Math.random()-.5)*24;positions[i*3+2]=(Math.random()-.5)*22-3}
+ starGeo.setAttribute('position',new THREE.BufferAttribute(positions,3));
+ stars=new THREE.Points(starGeo,new THREE.PointsMaterial({color:0xffe3ed,size:.035,transparent:true,opacity:.8}));
+ scene.add(stars);
+ // A sculpted, softly glowing heart
+ const shape=new THREE.Shape();shape.moveTo(0,.25);shape.bezierCurveTo(-.15,.65,-.85,.65,-.9,.05);shape.bezierCurveTo(-1,-.55,-.35,-1.05,0,-1.38);shape.bezierCurveTo(.35,-1.05,1,-.55,.9,.05);shape.bezierCurveTo(.85,.65,.15,.65,0,.25);
+ const heartGeo=new THREE.ExtrudeGeometry(shape,{depth:.28,bevelEnabled:true,bevelSegments:5,steps:1,bevelSize:.13,bevelThickness:.13,curveSegments:18});
+ const heartMat=new THREE.MeshPhysicalMaterial({color:0xe94e83,metalness:.2,roughness:.2,clearcoat:1,clearcoatRoughness:.1,emissive:0x65112f,emissiveIntensity:.45});
+ heart=new THREE.Mesh(heartGeo,heartMat);heart.scale.set(.95,.95,.95);heart.position.set(0,-.25,1);heart.rotation.z=Math.PI;scene.add(heart);
+ // Rose made from layered curved petals
+ roseGroup=new THREE.Group();roseGroup.position.set(0,-.25,1);
+ const petalGeo=new THREE.SphereGeometry(.34,18,14);
+ for(let layer=0;layer<3;layer++){const n=layer===0?5:layer===1?7:9;for(let i=0;i<n;i++){const a=i/n*Math.PI*2+layer*.32;const m=new THREE.Mesh(petalGeo,new THREE.MeshPhysicalMaterial({color:layer===0?0xffb2c7:layer===1?0xd94e7c:0xa92f62,roughness:.3,metalness:.08,clearcoat:.8}));m.scale.set(.8,.42,.23);m.position.set(Math.cos(a)*(.08+layer*.16),Math.sin(a)*(.08+layer*.16),layer*.11);m.rotation.z=a;m.rotation.x=-.2;roseGroup.add(m);petals.push(m)}}
+ roseGroup.scale.setScalar(.001);scene.add(roseGroup);
+ // Tiny orbiting lights
+ const orbGeo=new THREE.SphereGeometry(.045,8,8);
+ for(let i=0;i<34;i++){const o=new THREE.Mesh(orbGeo,new THREE.MeshBasicMaterial({color:i%3===0?0xffd79d:0xff9cbe,transparent:true,opacity:.8}));o.userData={a:Math.random()*6.28,r:2.1+Math.random()*3.3,s:.25+Math.random()*.45,y:(Math.random()-.5)*3};scene.add(o);floaters.push(o)}
+}catch(err){console.warn('3D scene unavailable:',err);fallback.style.display='grid'}
+function resize(){if(!renderer)return;camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)}
+addEventListener('resize',resize);
+let chapter=0;
+function animate(){requestAnimationFrame(animate);if(!renderer)return;const t=clock.getElapsedTime();
+ if(heart){heart.rotation.y=Math.sin(t*.42)*.23;heart.rotation.x=Math.sin(t*.35)*.09;heart.position.y=-.25+Math.sin(t*1.2)*.12;heart.material.emissiveIntensity=.35+Math.sin(t*2)*.12}
+ if(roseGroup){const k=Math.min(1,Math.max(0,(chapter-0)*.8));roseGroup.scale.lerp(new THREE.Vector3(k*1.05,k*1.05,k*1.05),.035);roseGroup.rotation.y=t*.18}
+ if(stars){stars.rotation.y=t*.008;stars.rotation.x=Math.sin(t*.07)*.025}
+ floaters.forEach(o=>{o.position.set(Math.cos(t*o.userData.s+o.userData.a)*o.userData.r,Math.sin(t*o.userData.s+o.userData.a)*.9+o.userData.y,Math.sin(t*.3+o.userData.a)*1.8);o.scale.setScalar(.7+Math.sin(t*2+o.userData.a)*.3)});
+ camera.position.z+=(13-chapter*.45-camera.position.z)*.018;camera.position.x+=(Math.sin(t*.12)*.25-camera.position.x)*.01;renderer.render(scene,camera)}
+animate();
+const scenes=[...document.querySelectorAll('.scene')],dots=[...document.querySelectorAll('.dot')];
+function show(n){chapter=n;scenes.forEach((s,i)=>s.classList.toggle('active',i===n));dots.forEach((d,i)=>d.classList.toggle('active',i===n));if(heart){heart.visible=n>=2;roseGroup.visible=n===1||n===4;heart.scale.setScalar(n===4?1.2:1)}if(n===4)burst()}
+document.querySelectorAll('.next').forEach(b=>b.addEventListener('click',()=>show(Math.min(4,chapter+1))));
+document.querySelector('#again').addEventListener('click',()=>show(0));
+function burst(){const symbols=['✦','♡','✧','❀'];for(let i=0;i<32;i++){const el=document.createElement('span');el.textContent=symbols[i%4];el.style.cssText='position:fixed;z-index:8;left:'+Math.random()*100+'vw;top:-20px;color:'+(i%2?'#ffabc9':'#f5d7a0')+';font-size:'+(12+Math.random()*17)+'px;pointer-events:none;transition:transform 4s linear,opacity 4s linear';document.body.appendChild(el);requestAnimationFrame(()=>{el.style.transform='translateY(110vh) rotate(520deg)';el.style.opacity='0'});setTimeout(()=>el.remove(),4200)}}
+document.querySelector('#sound').addEventListener('click',async()=>{const btn=document.querySelector('#sound');try{if(!audioCtx){audioCtx=new(window.AudioContext||window.webkitAudioContext)();const master=audioCtx.createGain();master.gain.value=.035;master.connect(audioCtx.destination);[220,277.18,329.63].forEach((f,i)=>{const osc=audioCtx.createOscillator(),gain=audioCtx.createGain();osc.type='sine';osc.frequency.value=f;gain.gain.value=.12;osc.connect(gain);gain.connect(master);osc.start()})}if(audioCtx.state==='suspended')await audioCtx.resume();ambient=!ambient;audioCtx.suspend? (ambient?audioCtx.resume():audioCtx.suspend()):null;btn.style.color=ambient?'#ffd2e0':'#f9dce7'}catch(e){btn.title='Ambient sound is unavailable in this browser'}});
+</script>
+</body>
+</html>
